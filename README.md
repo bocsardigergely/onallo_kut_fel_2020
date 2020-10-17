@@ -20,4 +20,4 @@ A preproc fő lépései a következőek lesznek:
 Mivel egy bináris osztályozási feladatot állítunk fel (növekedés = 1, visszaesés = 0), így elsősorban a kNN és a döntési fa algoritmusokat fogjuk kipróbálni, más-más paraméterezésekkel. A vizualizáció részében látványos lesz, hiszen, ha minden jól megy, a jósolt adatok alapján két szófelhőben ábrázolhatjuk a növekedést és a visszaesést "okozó" szavakat.
 
 
-2020 - Bevezetés az adattudományba 1 - Asztalos András - Bocsárdi Gergely
+*2020 - Bevezetés az adattudományba 1 - Asztalos András - Bocsárdi Gergely*
