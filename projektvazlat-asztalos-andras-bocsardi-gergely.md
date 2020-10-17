@@ -16,3 +16,7 @@ A preproc fő lépései a következőek lesznek:
 ## Előrejelzés
 
 Mivel egy bináris osztályozási feladatot állítunk fel (növekedés = 1, visszaesés = 0), így elsősorban a kNN és a döntési fa algoritmusokat fogjuk kipróbálni, más-más paraméterezésekkel. A vizualizáció részében látványos lesz, hiszen, ha minden jól megy, a jósolt adatok alapján két szófelhőben ábrázolhatjuk a növekedést és a visszaesést "okozó" szavakat.
+
+Az összes forrásfájl és adat megtalálható az ennek szentelt [GitHub repository-ban](https://github.com/bocsardigergely/onallo_kut_fel_2020).
+
+*Asztalos András és Bocsárdi Gergely*
