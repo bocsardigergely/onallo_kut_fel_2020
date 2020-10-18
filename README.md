@@ -23,6 +23,7 @@ Mivel egy bináris osztályozási feladatot állítunk fel (növekedés = 1, vis
 sources:  
 [Obama tweets](https://www.kaggle.com/datacrux/barack-obama-twitterdata-from-20122019)   
 [Trump tweets](https://www.kaggle.com/austinreese/trump-tweets)   
-[NY Stocks Exchange](https://www.kaggle.com/dgawlik/nyse)   
+[NY Stocks Exchange](https://www.kaggle.com/dgawlik/nyse) 
+[S&P 500](https://www.kaggle.com/awadhi123/finance-data-sp-500)  
 
 *2020 - Bevezetés az adattudományba 1 - Asztalos András - Bocsárdi Gergely*
