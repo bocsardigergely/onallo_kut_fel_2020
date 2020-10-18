@@ -12,8 +12,8 @@ A célunk az, hogy releváns képet alkossunk arról, hogy mely szavak megjelen�
 Az adatainkat a Kaggle.com-ról szereztük be, három datasettel dolgozunk. Az első a tőzsdei árakat tartalmazza, a másik kettő pedig Barack Obama és Donald Trump twitterjének scrapelt verziói. A két elnök hivatott kiegyensúlyozni a demokrata/republikánus eltéréseket, hogy az a jósolt adatban is minimálisra legyen csökkentve.
 A preproc fő lépései a következőek lesznek:
 * a twitter bejegyzéseket szavak előfordulására formálni, és elhagyni belőle a kötőszavakat, vagy egyéb redundáns információkat.
-* a tőzsdei adatokból a lehető legkrövidebb, még kezelhető intervallumokra trendeket leírni (növekedés/csökkenés az intervallumon)
-* kiválogatni, hogy mindkét elnök office periódusaira nagyjából hasonló mennyiségű entry jusson (a republikánus/demokrata pártpolitikai torzítást tovább csökkentendő)
+* a tőzsdei adatokból a lehető legrövidebb, még kezelhető intervallumokra trendeket leírni (növekedés/csökkenés az intervallumon)
+* kiválogatni, hogy mindkét elnök office periódusaira nagyjából hasonló mennyiségű entry jusson (a republikánus/demokrata pártpolitikai torzítást tovább csökkentendő) (Az adatokat az S&P 500 index árazásából fogjuk növőnek vagy csökkenőnek definiálni)
 
 ## Előrejelzés
 
