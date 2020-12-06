@@ -12,19 +12,6 @@ Az adatok előfeldolgozását a két adathalmazunkra bontva fogjuk ismertetni, e
 
 Az előfeldolgozás itt nem volt nagyon komplex feladat, a részvény nyitó és záró értékéből minden napra kiszámoltuk az aznapi változását, ammi így előjelesen jelent meg a táblázatunkban. Ezután egy függvénnyel felcímkéztük az egyes rekordokat, és ebben a függvényben állítható az "érzékenység", azaz, hogy mekkora változástól regisztráljuk a táblában, mint valódi változás. Ezt dollárban tudjuk állítani, ki fogjuk próbálni különböző érzékenységekre is a modellünket. A címke algoritmusában adunk nulla címkéket is, ezt egyelőre nem tervezzük használni az osztályozásban, viszont a jövőben ez megváltozhat, szóval benne hagyjuk egyelőre.
 
-```python
-def label(row, threshold): 
-    if abs(row['Change']) > threshold:
-        if row['Change'] > 0: return int(1)
-        else: return int(-1)
-    else: return int(0)
-
-def generate_data(sensitivity):
-    stock['Label'] = stock.apply (lambda row: label(row, sensitivity), axis=1)
-    stock_ready = stock.drop(columns=['Open', 'Close', 'Change'])
-    stock_ready = stock_ready[stock_ready.Label != 0]
-    return stock_ready 
-```
 
 #### Twitter adatok
 
@@ -48,4 +35,26 @@ def urls(row):
 
 Ezek vegyesen állnak fórumokon talált és általunk írt elemekből, az alap adataink helyenként furcsa formázása miatt kellett benne módosításokat eszközölnünk.  
 
-Az utolsó lépés a táblák illesztése volt, egyszerűen dátum szerint csináltuk. Az egy napra eső tweetek esetében úgy döntöttünk, hogy a modell az összefűzött szöveget fogja megkapni, minthogy külön szerepeljenek az egyes rekordok ugyanazzal a cmíkével. Ezt is észben tartjuk majd a kiértékelésnél.
+Az utolsó lépés a táblák illesztése volt, egyszerűen dátum szerint csináltuk. Az egy napra eső tweetek esetében úgy döntöttünk, kipróbáljuk úgy is, hogy összefűzzük az egy napi tweeteket, és úgy is hogy külön rekordok azonos címkével.  
+  
+Az adatokat kiexportáltuk mindkét verzióban, a cdj a "concated joined data"-t jelenti, az az ahol a tweetek egy napra össze vannak fűzve, ez a file a tisztított_adatok.xlsx, a másik a non_cdj.xlsx.
+
+### Baseline modellek
+
+Az első modellek felállításánál a scikit learn CountVectorizer() csomagját használtuk ahhoz, hogy a modellek számára is fogyasztható attribútumvektorokat állítsunk elő. Ez az első Bag of Words modell még nem egy világmegváltó dolog, de kiindulásnak jó.  
+A két modell a logisztikus regresszió és a random forest lett, mindkettő az sklearn csomagból jött. Ezeket kipróbálva nem érünk el túl jó eredményeket, olyan 50-55 százalékos Accuracy mellett predictelnek, szóval elég könnyű lesz majd felülmúlni őket. 
+
+### Hogyan tovább?
+
+A továbbiakban elkezdünk a neurális hálózatokkal játszani, itt a Keras és vele a Tensorflow az egyik esélyes, valamint ligába száll még a pytorch is.  
+(*Ehhez kapcsolódóan kaphatunk valami tippet, hogy melyikben lenne érdemes elmélyülni?*)  
+
+### Hivatkozások
+
+Itt szeretnék listázni pár cikket-videót-kurzust, ami segítségünkre volt (van) a feladatban.
+
+<ul>
+<li>A Stanford NLP kurzusa, ami Youtube-on [elérhető](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z) </li>
+<li>[Egy Real Python cikk](https://realpython.com/python-keras-text-classification/#choosing-a-data-set)], ami sokszor használt kapaszkodóul. </li>
+<li>Bár még nem sokat használtuk, remélem használt vesszük ennek a [listának](https://sunscrapers.com/blog/8-best-python-natural-language-processing-nlp-libraries/)]</li>
+</ul>
