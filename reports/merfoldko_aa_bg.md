@@ -55,3 +55,8 @@ Itt szeretnék listázni pár cikket-videót-kurzust, ami segítségünkre volt 
 <li><a href="(https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)"> A Stanford NLP kurzusa, ami Youtube-on elérhető </a> </li>
 <li> <a href='https://realpython.com/python-keras-text-classification/#choosing-a-data-set'> Egy Real Python cikk, ami sokszor használt kapaszkodóul. </a> </li>
 </ul>
+  
+
+
+
+*Asztalos András és Bocsárdi Gergely, 2020.12.06*
