@@ -23,12 +23,12 @@ A nagyobb kihívást a szövegben szerplő linkek és tagek jelentették. Ezekke
 A megoldásunk ezekre regex segítségével született:
 
 ```python
-def handlehandler(row):
-    return re.sub(r'@ (\w){1,15}', " ", row['Tweet-text'] )
-def http(row):
-    return re.sub(r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', " ", row['Tweet-text'] )
-def urls(row):
-    return re.sub(r'[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)', " ", row['Tweet-text'] )
+def tags(row): #Twitter tag-elést szűrő fv
+    return re.sub(r'@ ?(\w){1,15}', " ", row['text'] )
+
+def urls(row): # linkeket szűrő fv
+    return re.sub(r'(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)', " ", row['text'] )
+
 ```
 
 Ezek vegyesen állnak fórumokon talált és általunk írt elemekből, az alap adataink helyenként furcsa formázása miatt kellett benne módosításokat eszközölnünk.  
